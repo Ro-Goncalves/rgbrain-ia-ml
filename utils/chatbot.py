@@ -21,10 +21,15 @@ def create_vectorstore(chunks):
     return vactorstrore
 
 def create_conversation_chain(vectorstore):
+    """
+    google/gemma-7b
+    meta-llama/Llama-2-7b-chat-hf
+    mistralai/Mixtral-8x7B-Instruct-v0.1
+    """
     # llm = ChatOpenAI()
     llm = HuggingFaceEndpoint(
-        repo_id='google/gemma-7b',
-        huggingfacehub_api_token='MY_TOKEN', 
+        repo_id='mistralai/Mixtral-8x7B-Instruct-v0.1',
+        huggingfacehub_api_token='', 
         temperature=0.5,
         model_kwargs={'max_length':512})
     
