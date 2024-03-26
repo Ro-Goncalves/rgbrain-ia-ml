@@ -18,23 +18,15 @@ def main():
     if user_question:
         try:
             response = st.session_state.conversation(user_question)['chat_history']
-            
-            for i, text_message in enumerate(response):
-                
-                if(i % 2 == 0):
-                    message(text_message.content, is_user=True, key=str((i)) + '_user')
-                else:
-                    message(text_message.content, is_user=False, key=str((i)) + '_bot')
         except:
-           st.session_state.conversation = chatbot.create_conversation_chain() 
-           
+           st.session_state.conversation = chatbot.create_conversation_chain()            
            response = st.session_state.conversation(user_question)['chat_history']
             
-            for i, text_message in enumerate(response):                
-                if(i % 2 == 0):
-                    message(text_message.content, is_user=True, key=str((i)) + '_user')
-                else:
-                    message(text_message.content, is_user=False, key=str((i)) + '_bot')
+        for i, text_message in enumerate(response):                
+            if(i % 2 == 0):
+                message(text_message.content, is_user=True, key=str((i)) + '_user')
+            else:
+                message(text_message.content, is_user=False, key=str((i)) + '_bot')
     
     with st.sidebar:
         st.subheader('Seus arquivos')
