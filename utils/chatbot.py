@@ -2,7 +2,7 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain_community.embeddings import HuggingFaceInstructEmbeddings
 from langchain.vectorstores.faiss import FAISS
 from langchain.chat_models.openai import ChatOpenAI
-from langchain.memory import ConversationBufferMemory
+from langchain.memory import ConversationBufferMemory, ConversationSummaryMemory
 from langchain.chains.conversational_retrieval.base import ConversationalRetrievalChain
 from langchain_community.llms import HuggingFaceEndpoint
 
@@ -16,17 +16,27 @@ def create_vectorstore(chunks):
     embeddings = HuggingFaceInstructEmbeddings(       
         model_name='ricardo-filho/bert-base-portuguese-cased-nli-assin-2'
     )
-    vactorstrore = FAISS.from_texts(texts=chunks, embedding=embeddings)
+    new_vectorstrore = FAISS.from_texts(texts=chunks, embedding=embeddings)
     
-    return vactorstrore
+    vectorstrore = FAISS.load_local('faiss_default', embeddings)
+    vectorstrore.merge_from(new_vectorstrore)
+    
+    return vectorstrore
 
-def create_conversation_chain(vectorstore):
+def create_conversation_chain(vectorstore=None):
     """
     google/gemma-7b
     meta-llama/Llama-2-7b-chat-hf
     mistralai/Mixtral-8x7B-Instruct-v0.1
     """
     # llm = ChatOpenAI()
+    
+    if not vectorstore:
+        embeddings = HuggingFaceInstructEmbeddings(       
+            model_name='ricardo-filho/bert-base-portuguese-cased-nli-assin-2'
+        )
+        vectorstore = FAISS.load_local('faiss_default', embeddings)
+    
     llm = HuggingFaceEndpoint(
         repo_id='mistralai/Mixtral-8x7B-Instruct-v0.1',
         huggingfacehub_api_token='', 
