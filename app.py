@@ -15,7 +15,7 @@ def main():
     if('conversation' not in st.session_state):
         st.session_state.conversation = None
         
-    if user_question:
+    if user_question:        
         try:
             response = st.session_state.conversation(user_question)['chat_history']
         except:
@@ -27,6 +27,8 @@ def main():
                 message(text_message.content, is_user=True, key=str((i)) + '_user')
             else:
                 message(text_message.content, is_user=False, key=str((i)) + '_bot')
+        
+        print(st.session_state.conversation.combine_docs_chain)
     
     with st.sidebar:
         st.subheader('Seus arquivos')

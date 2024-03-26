@@ -44,16 +44,19 @@ def create_conversation_chain(vectorstore=None):
         )
         vectorstore = FAISS.load_local('faiss_default', embeddings)
     
-    template = """
-        Você é um robô chamado Brian, seu objetivo é responder perguntas sobre consórcio de um forma cordial.
-        Seja muito respeitoso e sempre use um português polido.
+    template = """Use as seguintes partes do contexto para responder à pergunta no final. Se você não sabe a resposta,
+    apenas diga que você não sabe, não tente inventar uma resposta, você deve seguir as seguintes REGARS:
 
-        Conversa atual:
-              
-        _bot:
-    """
+    - **RESPONDAS SOMENTE EM PORTUGUÊS**
+    - **SEU NOME É BRAIAN**
+    - **SEJA O MAIS CORTÊS POSSÍVEL**
+    
+    {context}
+    
+    Pergunta: {question}
+    Resposta:"""
 
-    PROMPT = PromptTemplate(input_variables=None, template=template)
+    PROMPT = PromptTemplate(input_variables=['context', 'chat_history'], template=template)
 
     llm = HuggingFaceEndpoint(
         repo_id='mistralai/Mixtral-8x7B-Instruct-v0.1',
