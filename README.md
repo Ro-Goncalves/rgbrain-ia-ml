@@ -1,0 +1,1 @@
+instalar wishper poetry add git+https://github.com/openai/whisper.git

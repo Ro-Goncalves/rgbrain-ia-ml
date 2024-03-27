@@ -5,12 +5,12 @@ from streamlit_chat import message
 def main():
     
     st.set_page_config(
-        page_title='Converse comigo',
+        page_title='Chat',
         page_icon=':books:'
     )
     
-    st.header('Converse comigo')
-    user_question = st.text_input('Pergunte-Me!!')
+    st.header('Vamos Conversar Sobre')
+    user_question = st.text_input('Diga-me o que desejas!!!')
     
     if('conversation' not in st.session_state):
         st.session_state.conversation = None
