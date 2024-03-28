@@ -20,6 +20,10 @@ sentence-transformers = "2.2.2"
 instructorembedding = "^1.0.1"
 langchain-community = "^0.0.29"
 openai-whisper = {git = "https://github.com/openai/whisper.git"}
+ffmpeg-python = "^0.2.0"
+audio-recorder-streamlit = "^0.0.8"
+gpt4all = "^2.3.2"
+speechrecognition = "^3.10.1"
 
 [build-system]
 requires = ["poetry-core"]
