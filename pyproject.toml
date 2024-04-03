@@ -6,7 +6,7 @@ authors = ["Rodrigo Gonçalves <ro.go.calves@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11.4"
+python = "^3.10.4"
 streamlit = "^1.32.2"
 python-dotenv = "^1.0.1"
 langchain = "^0.1.13"
@@ -25,6 +25,7 @@ audio-recorder-streamlit = "^0.0.8"
 gpt4all = "^2.3.2"
 speechrecognition = "^3.10.1"
 transformers = "^4.39.1"
+accelerate = "^0.28.0"
 
 [build-system]
 requires = ["poetry-core"]
