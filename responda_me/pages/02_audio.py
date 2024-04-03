@@ -48,7 +48,7 @@ st.write(
 st.sidebar.header("De-me o seu audio")
 audio = st.sidebar.file_uploader("quero ouvi-lo", type=['mp3', 'wav', 'm4a'])
 
-# device = 'cuda' if torch.cuda.is_available() else 'cpu'
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 
 if st.sidebar.button('Transcribe Audio'):
