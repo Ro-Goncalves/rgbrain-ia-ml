@@ -1,9 +1,17 @@
 import streamlit as st
 
+from utils.menus import app_menu
+
 st.set_page_config(
     page_title = "Responda Me",
     page_icon = "👋"
 )
+
+def states_iniciais():
+    if 'experimento' not in st.session_state:
+        st.session_state.experimento = None
+
+states_iniciais()
 
 st.write("# Bem Vinda à Demo RESPONDA-ME! 👋")
 
@@ -17,3 +25,9 @@ st.markdown(
     - **Responda-Me Audio**: É um conversor de audio em texto e texto em audio.
 """
 )
+
+with st.sidebar:
+    app_menu()
+
+if st.session_state.experimento:
+    st.write(st.session_state.experimento)

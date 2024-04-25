@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "responda-me"
+name = "rgbrain-ia-ml"
 version = "0.1.0"
 description = ""
 authors = ["Rodrigo Gonçalves <ro.go.calves@gmail.com>"]
@@ -26,6 +26,7 @@ gpt4all = "^2.3.2"
 speechrecognition = "^3.10.1"
 transformers = "^4.39.1"
 accelerate = "^0.28.0"
+streamlit-option-menu = "^0.3.12"
 
 [build-system]
 requires = ["poetry-core"]
