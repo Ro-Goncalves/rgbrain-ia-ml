@@ -1,0 +1,13 @@
+laboratorio_ocr:  
+  modelos_ocr: 
+    - nome: "PyTesseract"
+    - nome: "EasyOCR"
+    - nome: "PyPDF"
+    - nome: "LangChain"
+  modelos_llm: 
+    - nome: "LLM 01"
+    - nome: "LLM 02"
+    - nome: "LLM 03"
+  modelos_prompt: 
+    - nome: "Prompt 01 "
+    - nome: "Prompt 02"
