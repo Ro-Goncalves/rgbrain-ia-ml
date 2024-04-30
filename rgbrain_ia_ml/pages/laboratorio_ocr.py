@@ -3,6 +3,7 @@ import streamlit as st
 from utils.menus import laboratorios_menu
 from utils.misc import new_line
 from utils.configuracoes_paginas import configura_pagina
+from servicos.experimentos_ocr_servico import extrai_texto_com_pytesseract, extrai_texto_com_easyocr, extrai_texto_com_langchain_image
 
 st.set_page_config(page_title="LAB OCR", layout="wide")
 
@@ -76,6 +77,7 @@ with col_imagem:
         type=["png", "jpg", "jpeg"],
     ):
         st.image(imagem, caption="Imagem")
+        st.write(extrai_texto_com_langchain_image(imagem))
 
 with col_prompt:
     st.markdown("<h5 align='center'> Conversar Com a Imagem <b>", unsafe_allow_html=True)
