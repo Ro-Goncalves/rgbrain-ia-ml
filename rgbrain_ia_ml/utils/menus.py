@@ -22,7 +22,7 @@ def app_menu():
 def laboratorios_menu(arquivo_laboratorio: str):
     laboratorio = nome_laboratorio(arquivo_laboratorio)
     configuracoes_pagina = carregar_configuracoes_pagina()
-    st.header("Ao Inicio")
+    st.header("À Instituição")
     st.page_link("streamlit_app.py")
     st.divider()
     st.subheader("Experimentos")
