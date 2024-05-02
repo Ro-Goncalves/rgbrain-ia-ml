@@ -4,7 +4,8 @@ from utils.menus import app_menu
 
 st.set_page_config(
     page_title = "Responda Me",
-    page_icon = "👋"
+    page_icon = "👋",
+    layout="centered"
 )
 
 def states_iniciais():
@@ -13,7 +14,7 @@ def states_iniciais():
 
 states_iniciais()
 
-st.write("# Bem Vinda à Demo RESPONDA-ME! 👋")
+st.markdown("# Bem Vinda à Demo RESPONDA-ME! 👋")
 
 st.markdown(
     """
@@ -26,7 +27,8 @@ st.markdown(
 """
 )
 
-with st.sidebar:
+
+with st.sidebar:    
     app_menu()
 
 if st.session_state.experimento:

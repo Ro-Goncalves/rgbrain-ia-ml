@@ -1,0 +1,11 @@
+laboratorio_ocr:
+  experimentos:
+    - nome: "Laboratório - OCR"
+      icone: "car-front"
+
+    - nome: "Contato em Primeiro Grau"
+      icone: "car-front"
+
+    - nome: "Contato em Segundo Grau"
+      icone: "emoji-sunglasses"
+

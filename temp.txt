@@ -1,3 +1,5 @@
 https://huggingface.co/lxyuan/distilbert-base-multilingual-cased-sentiments-student?text=Eu+amo+de+mais+o+meu+cachorro%2C+ele+%C3%A9+lind%C3%A3o
 
 https://colab.research.google.com/drive/1ejNNqTjijhrNq3LJW176adBwaIm6fczI?usp=sharing#scrollTo=SNu9GNwlCr1R
+
+https://miyake-akio.medium.com/introdu%C3%A7%C3%A3o-b%C3%A1sica-ao-yaml-para-ansiosos-2ac4f91a4443
