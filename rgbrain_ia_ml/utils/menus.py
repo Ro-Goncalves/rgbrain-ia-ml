@@ -5,13 +5,13 @@ import os
 
 def app_menu():
     st.header("Laboratórios")
-    st.page_link("pages/laboratorio_ocr.py", label=":sunglasses: OCR")
+    st.page_link("pages/laboratorio_ocr.py", label="OCR", icon="👓")
     st.divider()
     st.subheader("Experimentos")
     st.session_state.experimento = option_menu(
         menu_title = None,
-        options = ["Sobre o Laboratório", "Experimentos", "Cientista"],
-        icons=['car-front', 'droplet-half', 'emoji-sunglasses'],        
+        options = ["Sobre a Instituição", "Laboratórios", "Cientista"],
+        icons=['bi-buildings', 'bi-radioactive', 'bi-robot'],        
         default_index=0,
         styles={
             "nav-link": {"color": "black", "--hover-color": "rgba(221, 30, 42, 0.7)"},
@@ -23,7 +23,7 @@ def laboratorios_menu(arquivo_laboratorio: str):
     laboratorio = nome_laboratorio(arquivo_laboratorio)
     configuracoes_pagina = carregar_configuracoes_pagina()
     st.header("À Instituição")
-    st.page_link("streamlit_app.py")
+    st.page_link("streamlit_app.py", label="Instituição", icon="🏰")
     st.divider()
     st.subheader("Experimentos")
 
