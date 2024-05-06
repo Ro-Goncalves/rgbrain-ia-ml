@@ -7,30 +7,36 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.11.4,<3.12"
+
+# STREAMLIT
 streamlit = "^1.32.2"
-python-dotenv = "^1.0.1"
-langchain = "^0.1.13"
-pypdf2 = "^3.0.1"
-faiss-cpu = "^1.8.0"
-openai = "^1.14.2"
-tiktoken = "^0.6.0"
-streamlit-chat = "^0.1.1"
-torch = "^2.2.1"
-sentence-transformers = "2.2.2"
-instructorembedding = "^1.0.1"
-langchain-community = "^0.0.29"
-openai-whisper = {git = "https://github.com/openai/whisper.git"}
-ffmpeg-python = "^0.2.0"
 audio-recorder-streamlit = "^0.0.8"
-gpt4all = "^2.3.2"
-speechrecognition = "^3.10.1"
-transformers = "^4.39.1"
-accelerate = "^0.28.0"
+streamlit-chat = "^0.1.1"
 streamlit-option-menu = "^0.3.12"
+
+# LANGCHAIN
+langchain = "^0.1.13"
+langchain-community = "^0.0.29"
+instructorembedding = "^1.0.1"
+transformers = "^4.39.1"
+
+# OCR
 pytesseract = "^0.3.10"
 easyocr = "^1.7.1"
-unstructured = "^0.13.6"
-pdf2image = "^1.17.0"
+keras-ocr = "^0.9.3"
+
+# OPENAI
+openai = "^1.14.2"
+tiktoken = "^0.6.0"
+openai-whisper = {git = "https://github.com/openai/whisper.git"}
+
+pypdf2 = "^3.0.1"
+faiss-cpu = "^1.8.0"
+torch = "^2.2.1"
+sentence-transformers = "2.2.2"
+ffmpeg-python = "^0.2.0"
+speechrecognition = "^3.10.1"
+accelerate = "^0.28.0"
 
 [build-system]
 requires = ["poetry-core"]
