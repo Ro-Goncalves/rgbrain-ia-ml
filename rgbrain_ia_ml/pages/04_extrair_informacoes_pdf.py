@@ -15,7 +15,7 @@ def _model():
 def _llm():    
     return HuggingFaceEndpoint(
         repo_id=_model(),
-        huggingfacehub_api_token='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', 
+        huggingfacehub_api_token='', 
         temperature=0.5,
         model_kwargs={'max_length':512})
 

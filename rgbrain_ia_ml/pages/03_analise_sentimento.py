@@ -32,7 +32,7 @@ def _model():
 #         top_k=20,
 #         num_return_sequences=1,
 #         eos_token_id=tokenizer.eos_token_id,
-#         token='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'
+#         token=''
 #     )
     
 #     return pipeline
@@ -42,7 +42,7 @@ def _llm():
     # return HuggingFacePipeline(pipeline=_pipeline(), model_kwargs={'temperature': 0.5})
     return HuggingFaceEndpoint(
         repo_id=_model(),
-        huggingfacehub_api_token='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', 
+        huggingfacehub_api_token='', 
         temperature=0.5,
         model_kwargs={'max_length':512})
 

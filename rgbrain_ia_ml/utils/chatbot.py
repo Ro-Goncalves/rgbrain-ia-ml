@@ -63,7 +63,7 @@ def create_conversation_chain(vectorstore=None):
 
     llm = HuggingFaceEndpoint(
         repo_id='mistralai/Mixtral-8x7B-Instruct-v0.1',
-        huggingfacehub_api_token='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', 
+        huggingfacehub_api_token='', 
         temperature=0.5,
         model_kwargs={'max_length':512})
     
