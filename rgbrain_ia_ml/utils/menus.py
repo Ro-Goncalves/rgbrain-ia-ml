@@ -6,6 +6,7 @@ import os
 def app_menu():
     st.header("Laboratórios")
     st.page_link("pages/laboratorio_ocr.py", label="OCR", icon="👓")
+    st.page_link("pages/laboratorio_chatboot.py", label="Chatboot", icon="📖")
     st.divider()
     st.subheader("Experimentos")
     st.session_state.experimento = option_menu(
