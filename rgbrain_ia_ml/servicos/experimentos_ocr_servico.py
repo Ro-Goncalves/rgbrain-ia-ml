@@ -6,8 +6,9 @@ from easyocr import Reader
 
 
 def extrai_texto_com_pytesseract(imagem):
-    stream_imagem = Image.open(imagem)
-    return str(image_to_string(stream_imagem))
+    # stream_imagem = Image.open(imagem)
+    # return str(image_to_string(stream_imagem))
+    ...
 
 def extrai_texto_com_easyocr(imagem):
     leitor = Reader(["en"])
@@ -16,11 +17,12 @@ def extrai_texto_com_easyocr(imagem):
 
     return texto
 
-# def _keras_model_load():
+def _keras_model_load():
 #         pipeline = keras_ocr.pipeline.Pipeline()
 #         return pipeline
+    ...
 
-# def extrai_texto_com_keras_ocr(imagem):  
+def extrai_texto_com_keras_ocr(imagem):  
 #     pipeline = _keras_model_load()  
 #     prediction_groups = pipeline.recognize(imagem)
     
@@ -30,4 +32,4 @@ def extrai_texto_com_easyocr(imagem):
     #     for ax, image, predictions in zip(axs, images, prediction_groups):
     #         #print(predictions)
     #         keras_ocr.tools.drawAnnotations(image=image, predictions=predictions, ax=ax)
-                
+    ...
