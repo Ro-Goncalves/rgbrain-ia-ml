@@ -9,3 +9,11 @@ laboratorio_ocr:
     - nome: "Contato em Segundo Grau"
       icone: "emoji-sunglasses"
 
+laboratorio_chatboot:
+  experimentos:
+    - nome: "Laboratório - CHATBOOT"
+      icone: "car-front"
+
+    - nome: "Contato em Primeiro Grau"
+      icone: "car-front"    
+
