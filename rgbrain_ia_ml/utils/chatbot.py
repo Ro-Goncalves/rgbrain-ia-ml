@@ -12,18 +12,11 @@ def create_vectorstore(chunks):
     """
     ricardo-filho/bert-base-portuguese-cased-nli-assin-2
     WhereIsAI/UAE-Large-V1
-    """
-    # embeddings = OpenAIEmbeddings()
-    # embeddings = HuggingFaceInstructEmbeddings(       
-    #     model_name='ricardo-filho/bert-base-portuguese-cased-nli-assin-2'
-    # )
-    # new_vectorstrore = FAISS.from_texts(texts=chunks, embedding=embeddings)
-    
-    # vectorstrore = FAISS.load_local('faiss_default', embeddings)
-    # vectorstrore.merge_from(new_vectorstrore)
+    sentence-transformers/all-MiniLM-L6-v2
+    """   
 
     embeddings = HuggingFaceInstructEmbeddings(       
-        model_name='ricardo-filho/bert-base-portuguese-cased-nli-assin-2'
+        model_name='sentence-transformers/all-MiniLM-L6-v2'
     )
     vactorstrore = FAISS.from_texts(texts=chunks, embedding=embeddings)
     
@@ -31,18 +24,6 @@ def create_vectorstore(chunks):
 
 
 def create_conversation_chain(vectorstore=None):
-    """
-    google/gemma-7b
-    meta-llama/Llama-2-7b-chat-hf
-    mistralai/Mixtral-8x7B-Instruct-v0.1
-    """
-    # llm = ChatOpenAI()   
-    
-    if not vectorstore:
-        embeddings = HuggingFaceInstructEmbeddings(       
-            model_name='ricardo-filho/bert-base-portuguese-cased-nli-assin-2'
-        )
-        vectorstore = FAISS.load_local('faiss_default', embeddings)
     
     template = """Use as seguintes partes do contexto para responder à pergunta no final. Se você não sabe a resposta,
     apenas diga que você não sabe, não tente inventar uma resposta, não responda nada que não seja um texto, 
@@ -62,8 +43,7 @@ def create_conversation_chain(vectorstore=None):
     PROMPT = PromptTemplate(input_variables=['context', 'chat_history'], template=template)
 
     llm = HuggingFaceEndpoint(
-        repo_id='mistralai/Mixtral-8x7B-Instruct-v0.1',
-        huggingfacehub_api_token='', 
+        repo_id='mistralai/Mixtral-8x7B-Instruct-v0.1',      
         temperature=0.5,
         model_kwargs={'max_length':512})
     
