@@ -1,6 +1,9 @@
 import streamlit as st
 
 from utils.menus import app_menu
+from utils import secrets
+
+secrets.carregar_secrets()
 
 st.set_page_config(
     page_title = "RGBRIAN - AI ML",
